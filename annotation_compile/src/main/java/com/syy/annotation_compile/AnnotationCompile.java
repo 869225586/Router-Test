@@ -69,9 +69,9 @@ public class AnnotationCompile extends AbstractProcessor {
             String utilName = "ActivityUtil"+System.currentTimeMillis();
             try {
                 //创建文件对象
-                JavaFileObject javaFileObject = filer.createSourceFile("com.ziproute.util."+utilName);
+                JavaFileObject javaFileObject = filer.createSourceFile("com.syy.util."+utilName);
                 writer = javaFileObject.openWriter();
-                writer.write("package com.ziproute.util;\n " +
+                writer.write("package com.syy.util;\n " +
                         "\n" +
                         "import com.syy.route.ARouter;\n" +
                         "import com.syy.route.IRoute;\n" +

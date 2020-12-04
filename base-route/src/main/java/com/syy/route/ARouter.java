@@ -42,7 +42,7 @@ public class ARouter {
      */
     public void init(Application application){
         this.context = application;
-        List<String> className = getClassName("com.ziproute.util");
+        List<String> className = getClassName("com.syy.util");
         for (String s : className) {
             try {
                 Class<?> aClass = Class.forName(s);
