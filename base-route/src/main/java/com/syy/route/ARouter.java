@@ -42,13 +42,15 @@ public class ARouter {
      */
     public void init(Application application){
         this.context = application;
+        //找apk dex 文件中所有包名 是 com.syy.util 的类 就是我们注解生成的类 这些类中包含有对应的activity.class
         List<String> className = getClassName("com.syy.util");
         for (String s : className) {
             try {
                 Class<?> aClass = Class.forName(s);
                 //判断当前这个类是否是IRoute的实现类
                 if(IRoute.class.isAssignableFrom(aClass)){
-                    IRoute iRoute = (IRoute) aClass.newInstance();
+                    IRoute iRoute = (IRoute) aClass.newInstance();//反射拿到对象 调用putactivity 把
+                    //activity.class 放进了Arouter 的map 中
                     iRoute.putActivity();
                 }
             } catch (Exception e) {
